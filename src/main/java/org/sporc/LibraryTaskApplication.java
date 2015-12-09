@@ -26,18 +26,32 @@ public class LibraryTaskApplication {
 			Book hamlet = bookRepository.save(new Book("Hamlet", shakespeare));
 			Book actionZebra = bookRepository.save(new Book("Action Zebra", newton));
 			Book freakyOutHere = bookRepository.save(new Book("It's Freaky Out Here", bowie));
-
+			Book kapital = bookRepository.save(new Book("Das Kapital", newton));
+			Book twilight = bookRepository.save(new Book("Twilight", shakespeare));
+			
 			ducksInSpace.borrow(bowie);
 			bookRepository.save(ducksInSpace);
 
+			goneWithTheWind.borrow(newton);
+			bookRepository.save(goneWithTheWind);
+			
+			spaceAdventures.borrow(newton);
+			bookRepository.save(spaceAdventures);
+			
 			hamlet.borrow(bowie);
 			bookRepository.save(hamlet);
 
-			actionZebra.borrow(bowie);
+			actionZebra.borrow(newton);
 			bookRepository.save(actionZebra);
+
+			freakyOutHere.borrow(newton);
+			bookRepository.save(freakyOutHere);
 			
-			goneWithTheWind.borrow(newton);
-			bookRepository.save(goneWithTheWind);
+			kapital.borrow(shakespeare);
+			bookRepository.save(kapital);
+			
+			twilight.borrow(aubrey);
+			bookRepository.save(twilight);
 		};
 	}
 }

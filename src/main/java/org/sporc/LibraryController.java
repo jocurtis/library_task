@@ -36,6 +36,7 @@ public class LibraryController {
 	@RequestMapping(path = "/")
     public String index(Model model) {
 		model.addAttribute("people", getPersonRepository().findAll());
+		model.addAttribute("books", getBookRepository().findAll());
         return "index";
     }
 
