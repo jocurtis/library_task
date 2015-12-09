@@ -19,6 +19,8 @@ public class Person {
     private long personId;
     private String firstName;
     private String lastName;
+    private String phoneNumber;
+    private String emailAddress;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "author")
     private List<Book> authored;
@@ -28,9 +30,11 @@ public class Person {
     
     protected Person() {}
 
-    public Person(String firstName, String lastName) {
+    public Person(String firstName, String lastName, String phoneNumber, String emailAddress) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.emailAddress = emailAddress;
     }
 
     public long getPersonId() {
@@ -43,6 +47,14 @@ public class Person {
     
     public String getLastName() {
 		return lastName;
+	}
+    
+    public String getPhoneNumber() {
+		return phoneNumber;
+	}
+    
+    public String getEmailAddress() {
+		return emailAddress;
 	}
     
     @JsonIgnore

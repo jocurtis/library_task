@@ -14,6 +14,7 @@ public class Book {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long bookId;
     private String title;
+    private String ISBN;
     
     @ManyToOne
     @JoinColumn(name="authorId")
@@ -25,8 +26,9 @@ public class Book {
     
     protected Book() {}
 
-    public Book(String title, Person author) {
+    public Book(String title, String ISBN, Person author) {
         this.title = title;
+        this.ISBN = ISBN;
         this.author = author;
     }
 
@@ -45,6 +47,10 @@ public class Book {
     
     public Person getAuthor() {
 		return author;
+	}
+    
+    public String getISBN() {
+		return ISBN;
 	}
 }
 
